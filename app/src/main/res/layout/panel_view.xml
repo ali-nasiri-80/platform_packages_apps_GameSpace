@@ -78,7 +78,6 @@
                     android:textColor="?android:attr/textColorPrimaryInverse"
                     android:drawablePadding="2dp"
                     android:textSize="14sp" />
-
                 </LinearLayout>
             </RelativeLayout>
 

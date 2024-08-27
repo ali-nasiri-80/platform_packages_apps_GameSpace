@@ -17,6 +17,7 @@
  */
 package io.chaldeaprjkt.gamespace.widget
 
+import androidx.core.content.ContextCompat
 import android.annotation.SuppressLint
 import android.content.BroadcastReceiver
 import android.content.Context
@@ -43,10 +44,21 @@ class BatteryView @JvmOverloads constructor(
                 val scale = intent.getIntExtra(BatteryManager.EXTRA_SCALE, 0)
                 val percent = (level.toFloat() / scale * 100).toInt()
                 text = context.getString(R.string.battery_format, percent)
-            }
+                val status = intent.getIntExtra(BatteryManager.EXTRA_STATUS, -1)
+
+            if (status == BatteryManager.BATTERY_STATUS_CHARGING) {
+                 val drawable = ContextCompat.getDrawable(context, R.drawable.ic_game_space_battery_chargeing)?.apply {
+                 setBounds(0, 0, intrinsicWidth, intrinsicHeight) }
+
+                setCompoundDrawables(drawable, null, null, null) }
+            else {
+                val drawable = ContextCompat.getDrawable(context, R.drawable.battery_outline)?.apply {
+                setBounds(0, 0, intrinsicWidth, intrinsicHeight) }
+
+                setCompoundDrawables(drawable, null, null, null) }
         }
     }
-
+}
     init {
         val batteryManager = context.getSystemService(BatteryManager::class.java)
         text = context.getString(

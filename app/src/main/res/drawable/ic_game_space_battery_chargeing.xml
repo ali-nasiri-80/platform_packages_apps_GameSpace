@@ -1,0 +1,22 @@
+<vector
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:id="@+id/ic_game_space_battery_chargeing"
+    android:viewportWidth="6.35"
+    android:viewportHeight="6.35"
+    android:width="24dp"
+    android:height="24dp"
+    android:tint="?android:attr/textColorPrimaryInverse">
+    <path
+        android:pathData="M4.2333333 5.2916667H2.1166667V1.5875H4.2333333M4.4106042 1.0583333H3.96875V0.52916668H2.38125V1.0583333H1.9393958c-0.093398 0 -0.1828271 0.037042 -0.2487083 0.1031875C1.6245417 1.2274021 1.5875 1.3168312 1.5875 1.4102292v4.0587083c0 0.1931458 0.15875 0.3518958 0.3518958 0.3518958h2.4712084c0.093398 0 0.182827 -0.037042 0.2487083 -0.1031875C4.7254585 5.6517648 4.7625 5.5623354 4.7625 5.4689375V1.4102292c0 -0.1931459 -0.15875 -0.3518959 -0.3518958 -0.3518959z"
+        android:fillColor="#000000" />
+    <group
+        android:scaleX="0.1218295"
+        android:scaleY="0.1218295"
+        android:translateX="1.713046"
+        android:translateY="1.975126">
+        <path
+            android:pathData="M10.67 21v0C10.32 21 10.05 20.69 10.1 20.34L11 14H7.5C6.62 14 7.17 13.25 7.19 13.22 8.45 10.99 10.34 7.69 12.84 3.29 12.94 3.11 13.14 3 13.34 3v0c0.35 0 0.62 0.31 0.57 0.66L13.01 10h3.51c0.4 0 0.62 0.19 0.4 0.66 -3.29 5.74 -5.2 9.09 -5.75 10.05 -0.1 0.18 -0.29 0.29 -0.5 0.29z"
+            android:fillColor="#000000" />
+    </group>
+</vector>
