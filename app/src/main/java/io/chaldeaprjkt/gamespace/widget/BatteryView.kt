@@ -45,20 +45,27 @@ class BatteryView @JvmOverloads constructor(
                 val percent = (level.toFloat() / scale * 100).toInt()
                 text = context.getString(R.string.battery_format, percent)
                 val status = intent.getIntExtra(BatteryManager.EXTRA_STATUS, -1)
-
+                val batteryViewCharging = findViewById<BatteryView>(R.id.battery_outline_charging)
+                val batteryViewNonCharging = findViewById<BatteryView>(R.id.battery_outline)
             if (status == BatteryManager.BATTERY_STATUS_CHARGING) {
-                 val drawable = ContextCompat.getDrawable(context, R.drawable.battery_outline_charging)?.apply {
-                 setBounds(0, 0, intrinsicWidth, intrinsicHeight) }
-
-                setCompoundDrawables(drawable, null, null, null) }
+                batteryViewCharging?.compoundDrawables?.get(0)?.let { drawable ->
+                drawable.setBounds(0, 0, drawable.intrinsicWidth, drawable.intrinsicHeight)
+                batteryViewCharging.setCompoundDrawables(drawable, null, null, null)
+            }
+                batteryViewCharging?.visibility = VISIBLE
+                batteryViewNonCharging?.visibility = GONE
+            }
             else {
-                val drawable = ContextCompat.getDrawable(context, R.drawable.battery_outline)?.apply {
-                setBounds(0, 0, intrinsicWidth, intrinsicHeight) }
-
-                setCompoundDrawables(drawable, null, null, null) }
+                batteryViewNonCharging?.compoundDrawables?.get(0)?.let { drawable ->
+                drawable.setBounds(0, 0, drawable.intrinsicWidth, drawable.intrinsicHeight)
+                batteryViewNonCharging.setCompoundDrawables(drawable, null, null, null) }
+                batteryViewCharging?.visibility = GONE
+                batteryViewNonCharging?.visibility = VISIBLE
+            }
         }
     }
 }
+
     init {
         val batteryManager = context.getSystemService(BatteryManager::class.java)
         text = context.getString(
