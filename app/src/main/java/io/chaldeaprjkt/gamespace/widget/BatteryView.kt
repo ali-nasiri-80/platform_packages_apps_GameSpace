@@ -47,7 +47,7 @@ class BatteryView @JvmOverloads constructor(
                 val status = intent.getIntExtra(BatteryManager.EXTRA_STATUS, -1)
 
             if (status == BatteryManager.BATTERY_STATUS_CHARGING) {
-                 val drawable = ContextCompat.getDrawable(context, R.drawable.battery_outline_chargeing)?.apply {
+                 val drawable = ContextCompat.getDrawable(context, R.drawable.battery_outline_charging)?.apply {
                  setBounds(0, 0, intrinsicWidth, intrinsicHeight) }
 
                 setCompoundDrawables(drawable, null, null, null) }
